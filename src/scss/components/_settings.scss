@@ -1,0 +1,105 @@
+$flag: '../images/flag-logo.png';
+
+@mixin flag-icon{
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  @include margin-right(5px);
+  top: 1px;
+  background: url($flag) no-repeat transparent;
+  background-size: 16px auto;
+  &.ar {
+    background-position: 0 3px;
+  }
+  &.zh {
+    background-position: 0 -12px
+  }
+  &.en {
+    background-position: 0 -28px
+  }
+  &.de {
+    background-position: 0 -44px
+  }
+  &.id {
+    background-position: 0 -62px
+  }
+  &.pt {
+    background-position: 0 -79px
+  }
+}
+
+
+.lang-menu {
+  .flag {
+    margin: 0;
+    & i {
+      margin-left: $spacing2;
+      @include flag-icon;
+    }
+  }
+  .collection-item {
+    padding: 0
+  }
+}
+
+.collection .collection-item.avatar :not(.circle-clipper) > .circle.flag {
+  width: auto;
+  height: auto;
+  overflow: visible;
+}
+
+.lang-opt {
+  display: block;
+  padding: 0 !important;
+  @include palette-text-primary;
+}
+
+.lang-list {
+  min-height: 0 !important;
+}
+
+.setting {
+  width: 48px;
+  height: 48px;
+  margin: spacing(0, 1);
+  text-align: center;
+  line-height: 48px;
+  position: relative;
+  .icon {
+    font-size: 24px;
+    transition: all 0.3s ease;
+    color: $palette-common-white;
+  }
+  .active {
+    transform: rotate(30deg)
+  }
+  .menu-list {
+    text-transform: capitalize
+  }
+  .dropdown-content {
+    width: 240px !important;
+    border-radius: 12px;
+    [dir="ltr"] & {
+      right: $spacing1 !important;
+      left: auto !important
+    }
+    [dir="rtl"] & {
+      left: $spacing1 !important;
+      right: auto !important
+    }
+  }
+}
+
+.mode-menu, .lang-menu {
+  text-transform: capitalize
+}
+
+.flex-menu {
+  display: flex;
+  justify-content: flex-start;
+  label {
+    text-transform: capitalize;
+  }
+}

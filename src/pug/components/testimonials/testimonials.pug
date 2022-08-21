@@ -1,0 +1,189 @@
+include ../title.pug
+include avatar-buble.pug
+
+-
+  var testiData = [
+    {
+      avatar: imgAPI.avatar[0],
+      name: 'John Doe',
+      title: 'Company Dot Com',
+      text: 'Vestibulum faucibus eget erat eget pretium. Donec commodo convallis ligula.',
+      x: 100,
+      y: 150
+    },
+    {
+      name: 'John Doe',
+      title: 'Company Dot Com',
+      text: 'Vestibulum faucibus eget erat eget pretium. Donec commodo convallis ligula.',
+      x: 120,
+      y: 100
+    },
+    {
+      name: 'John Doe',
+      title: 'Company Dot Com',
+      text: 'Vestibulum faucibus eget erat eget pretium. Donec commodo convallis ligula.',
+      x: 400,
+      y: 40
+    },
+    {
+      avatar: imgAPI.avatar[3],
+      name: 'John Doe',
+      title: 'Company Dot Com',
+      text: 'Vestibulum faucibus eget erat eget pretium. Donec commodo convallis ligula.',
+      x: 500,
+      y: 300
+    },
+    {
+      avatar: imgAPI.avatar[4],
+      name: 'John Doe',
+      title: 'Company Dot Com',
+      text: 'Vestibulum faucibus eget erat eget pretium. Donec commodo convallis ligula.',
+      x: 270,
+      y: 220
+    },
+    {
+      name: 'John Doe',
+      title: 'Company Dot Com',
+      text: 'Vestibulum faucibus eget erat eget pretium. Donec commodo convallis ligula.',
+      x: 100,
+      y: 200
+    },
+    {
+      avatar: imgAPI.avatar[6],
+      name: 'John Doe',
+      title: 'Company Dot Com',
+      text: 'Vestibulum faucibus eget erat eget pretium. Donec commodo convallis ligula.',
+      x: 100,
+      y: 40
+    },
+    {
+      name: 'John Doe',
+      title: 'Company Dot Com',
+      text: 'Vestibulum faucibus eget erat eget pretium. Donec commodo convallis ligula.',
+      x: 330,
+      y: 100
+    },
+    {
+      avatar: imgAPI.avatar[1],
+      name: 'John Doe',
+      title: 'Company Dot Com',
+      text: 'Vestibulum faucibus eget erat eget pretium. Donec commodo convallis ligula.',
+      x: 30,
+      y: 50
+    },
+    {
+      avatar: imgAPI.avatar[9],
+      name: 'John Doe',
+      title: 'Company Dot Com',
+      text: 'Vestibulum faucibus eget erat eget pretium. Donec commodo convallis ligula.',
+      x: 400,
+      y: 150
+    },
+    {
+      name: 'John Doe',
+      title: 'Company Dot Com',
+      text: 'Vestibulum faucibus eget erat eget pretium. Donec commodo convallis ligula.',
+      x: 480,
+      y: 100
+    },
+    {
+      name: 'John Doe',
+      title: 'Company Dot Com',
+      text: 'Vestibulum faucibus eget erat eget pretium. Donec commodo convallis ligula.',
+      x: 250,
+      y: 100
+    },
+    {
+      avatar: imgAPI.avatar[2],
+      name: 'John Doe',
+      title: 'Company Dot Com',
+      text: 'Vestibulum faucibus eget erat eget pretium. Donec commodo convallis ligula.',
+      x: 150,
+      y: 300
+    },
+    {
+      avatar: imgAPI.avatar[7],
+      name: 'John Doe',
+      title: 'Company Dot Com',
+      text: 'Vestibulum faucibus eget erat eget pretium. Donec commodo convallis ligula.',
+      x: 300,
+      y: 140
+    },
+    {
+      name: 'John Doe',
+      title: 'Company Dot Com',
+      text: 'Vestibulum faucibus eget erat eget pretium. Donec commodo convallis ligula.',
+      x: 480,
+      y: 280
+    },
+    {
+      avatar: imgAPI.avatar[5],
+      name: 'John Doe',
+      title: 'Company Dot Com',
+      text: 'Vestibulum faucibus eget erat eget pretium. Donec commodo convallis ligula.',
+      x: 300,
+      y: 300
+    }
+  ]
+
+.root
+  .container.fixed-width-md-up
+    +title-main
+      | #{$t.maskulino_landing.testi_title} 
+      strong #{$t.maskulino_landing.testi_titleBold}
+    .row
+      .col-md-7.px-0
+        .world-map
+          .hidden-xs-down
+            .avatar-wrap
+              each item in testiData
+                .avatar-item(
+                  tabindex="0"
+                  role="button"
+                  data-placement="top"
+                  style="left:"+item.x+"px; top:"+item.y+"px"
+                  data-html="true"
+                  data-toggle="popover"
+                  data-trigger="hover focus"
+                  data-content="<div class='paper-block'><p class='pb-2'>"+item.text+"</p><h6>"+item.name+"</h6><p class='title'>"+item.title+"</p></div>"
+                )
+                  +avatar-buble(item.avatar, item.name)
+          .hidden-sm-up
+            .slick-carousel#testimonial_carousel
+              each item in testiData
+                .item-carousel
+                  .card
+                    p.body-1 #{item.text}
+                    .name
+                      if item.avatar
+                        .avatar-img
+                          |
+                          |
+                          img(src=item.avatar alt='item.name')/
+                          |
+                          |
+                      else
+                        .avatar-img.grey
+                          |
+                          |
+                          strong.white--text.headline #{item.name.charAt(0)}
+                          |
+                          |
+                      |
+                      |
+                      span.caption #{item.name}
+                      |
+                      |
+      .col-md-5.pe-lg-10
+        .text
+          .wow.fadeInUpShort(data-wow-offset='-200' data-wow-delay='0.2s' data-wow-duration='0.3s')
+            h3.use-text-title2 #{$t.maskulino_landing.testi_title2}
+          .wow.fadeInUpShort(data-wow-offset='-200' data-wow-delay='0.3s' data-wow-duration='0.3s')
+            div
+              p.use-text-paragraph #{$t.maskulino_landing.testi_desc}
+              |
+              |
+              a.btn.btn-large.primary.button.waves-effect(href="#contact")
+                | #{$t.maskulino_landing.testi_button}
+              |
+              |

@@ -1,0 +1,62 @@
+extends ../layouts/app.pug
+
+block variables
+  - var pageTitle = " Luxi Theme Profile"
+  - var hero_banner = 'animation-slideshow'
+
+block content
+  div
+    #home
+    .main-wrap
+      include ../components/header.pug
+      // ##### HEADER #####
+      +header(false)
+      // ##### END HEADER #####
+      main.container-wrap
+        // ##### BANNER #####
+        section#banner_nav
+          include ../components/banner-nav.pug
+        // ##### END BANNER #####
+        section#about
+          // ##### ABOUT #####
+          include ../components/about.pug
+          // ##### END ABOUT #####
+          // ##### TIMELINE #####
+          include ../components/timeline.pug
+          // ##### END TIMELINE #####
+          // ##### COUNTER #####
+          include ../components/counter.pug
+          // ##### END COUNTER #####
+        .grey-bg#feature_parallax
+          .deco-wrap
+            include ../components/parallax-deco.pug
+            // ##### SERVICES #####
+            section#services
+              include ../components/services.pug
+            // ##### END SERVICES #####
+            // ##### GALLERY #####
+            section#my-work.space-top-short.space-bottom-short
+              include ../components/gallery.pug
+            // ##### END GALLERY #####
+          // ##### TESTIMONIAL #####
+          section#testimonials
+            include ../components/testimonials/testimonials.pug
+          // ##### END TESTIMONIAL #####
+          .deco-wrap.bottom
+            include ../components/parallax-deco.pug
+          // ##### BLOG #####
+          section#blog.space-top-short
+            include ../components/blog.pug
+          // ##### END BLOG #####
+          // ##### FOOTER #####
+          section#footer.space-top
+            include ../components/footer.pug
+          // ##### END FOOTER #####
+        // ##### PAGE NAV #####
+        .hidden-md-down
+          include ../components/page-nav.pug
+        // ##### END PAGE NAV #####
+        // ##### NOTIFICATION #####
+        .hidden-md-down
+          include ../components/notification.pug
+        // ##### END NOTIFICATION #####

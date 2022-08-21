@@ -1,0 +1,68 @@
+include title.pug
+include cards/icon-text.pug
+
+-
+  var services = [
+    {
+      icon: 'ion-ios-color-wand',
+      name: 'UI Interface Design',
+      desc: 'Pellentesque ac  vel blandit nulla.'
+    },
+    {
+      icon: 'ion-logo-dribbble',
+      name: 'Icon Design',
+      desc: 'Pellentesque ac  vel blandit nulla.'
+    },
+    {
+      icon: 'ion-ios-globe',
+      name: 'HTML Prototyping',
+      desc: 'Pellentesque ac  vel blandit nulla.'
+    },
+    {
+      icon: 'ion-ios-camera',
+      name: 'Photo Editing',
+      desc: 'Pellentesque ac  vel blandit nulla.'
+    },
+    {
+      icon: 'ion-ios-snow',
+      name: 'Graphic Illustrations',
+      desc: 'Pellentesque ac  vel blandit nulla.'
+    }
+  ]
+
+.root
+  .floating-title
+    +title-main
+      strong #{$t.maskulino_landing.services_title}
+    p.use-text-paragraph #{$t.maskulino_landing.services_desc}
+  .slider-wrap
+    .carousel
+      |
+      |
+      button.btn-icon.nav.prev.waves-effect#prev_services
+        |
+        |
+        i.ion-ios-arrow-back
+        |
+        |
+      |
+      |
+      .slick-carousel#services_carousel(data-length=services.length)
+        .item.item-props-first
+          div
+        each item in services
+          .item
+            +icon-text(item.icon, item.name, item.desc)
+        .item.show-md-up
+          .item.item-props-last
+            div
+      |
+      |
+      button.btn-icon.nav.next.waves-effect#next_services
+        |
+        |
+        i.ion-ios-arrow-forward
+        |
+        |
+      |
+      |

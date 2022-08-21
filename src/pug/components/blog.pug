@@ -1,0 +1,80 @@
+-
+  var blogData = [
+    {
+      img: imgAPI.photo[0],
+      title: 'Vivamus sit amet interdum elit',
+      desc:
+        'Ut sed eros finibus, placerat orci id, dapibus mauris. Vestibulum consequat…'
+    },
+    {
+      img: imgAPI.photo[1],
+      title: 'Vivamus sit amet interdum elit',
+      desc:
+        'Ut sed eros finibus, placerat orci id, dapibus mauris. Vestibulum consequat…'
+    },
+    {
+      img: imgAPI.photo[2],
+      title: 'Vivamus sit amet interdum elit',
+      desc:
+        'Ut sed eros finibus, placerat orci id, dapibus mauris. Vestibulum consequat…'
+    },
+    {
+      img: imgAPI.photo[3],
+      title: 'Vivamus sit amet interdum elit',
+      desc:
+        'Ut sed eros finibus, placerat orci id, dapibus mauris. Vestibulum consequat…'
+    },
+    {
+      img: imgAPI.photo[4],
+      title: 'Vivamus sit amet interdum elit',
+      desc:
+        'Ut sed eros finibus, placerat orci id, dapibus mauris. Vestibulum consequat…'
+    },
+    {
+      img: imgAPI.photo[5],
+      title: 'Vivamus sit amet interdum elit',
+      desc:
+        'Ut sed eros finibus, placerat orci id, dapibus mauris. Vestibulum consequat…'
+    }
+  ]
+
+include cards/blog-post.pug
+include title.pug
+
+.root
+  .floating-title
+    +title-main
+      | #{$t.maskulino_landing.blog_title} 
+      strong #{$t.maskulino_landing.blog_titlebold}
+    p.mb-0.use-text-paragraph #{$t.maskulino_landing.blog_desc}
+    a.btn-flat.primary.link(href='#') luxi-theme.blog.com
+  .slider-wrap
+    .carousel
+      |
+      |
+      button.btn-icon.nav.prev.waves-effect#prev_blog
+        |
+        |
+        i.ion-ios-arrow-back
+        |
+        |
+      |
+      |
+      .slick-carousel#news_carousel(data-length=blogData.length)
+        .item.item-props-first.show-md-up
+          div
+        each item in blogData
+          .item
+            +blog-post(item.img, item.title, item.desc)
+        .item.item-props-last.show-md-up
+          div
+      |
+      |
+      button.btn-icon.nav.next.waves-effect#next_blog
+        |
+        |
+        i.ion-ios-arrow-forward
+        |
+        |
+      |
+      |

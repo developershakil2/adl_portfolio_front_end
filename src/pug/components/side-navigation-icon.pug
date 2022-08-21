@@ -1,0 +1,14 @@
+.navigation
+  nav.nav-menu
+    .scrollactive-nav
+      a.logo.anchor-link(href='#banner')
+        img(src=assets+brand.maskulino.img alt='logo')/
+    .menu
+      ul.collection.scrollactive-nav.scrollnav
+        each item in menu.maskulino
+          li.collection-item.link.anchor-link
+            a(href='#'+item.name)
+              .icon
+                span(class=item.icon)
+            span.text.waves-effect
+              | #{$t.maskulino_landing['header_'+item.name]}

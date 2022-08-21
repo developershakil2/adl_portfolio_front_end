@@ -1,0 +1,47 @@
+#contact {
+  .form-box {
+    padding: $spacing2;
+    overflow: visible;
+    @include breakpoints-up(sm) {
+      padding: $spacing7
+    }
+    @include breakpoints-down(xs) {
+      padding: spacing(4, 2)
+    }
+  }
+
+  .title-form {
+    background: none;
+    @include text-align(left);
+    @include use-theme(color, $palette-primary-dark, $palette-primary-light);
+    span {
+      display: block;
+      color: $palette-secondary-main
+    }
+  }
+  .input {
+    width: 100%;
+    margin-bottom: $spacing5;
+    @include breakpoints-down(xs) {
+      margin-bottom: $spacing3
+    }
+  }
+
+  .form {
+    @include text-align(left);
+    position: relative;
+  }
+  .btn-area {
+    display: flex;
+    justify-content: space-between;
+    margin: spacing(0, 0, 3);
+    @include breakpoints-up(sm) {
+      margin: spacing(3, 0, 0)
+    }
+    @include breakpoints-down(xs) {
+      .btn {
+        width: 100%
+      }
+    }
+  }
+}

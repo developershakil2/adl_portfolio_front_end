@@ -1,0 +1,88 @@
+$error-deco: '../images/maskulino/error-deco.png';
+
+.error-wrap {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  .text {
+    @include breakpoints-up(md) {
+      @include padding-left($spacing5);
+      @include border-left(1px solid);
+      @include use-theme(border-color, $light-divider, $dark-divider)
+    }
+    @include breakpoints-down(sm) {
+      text-align: center;
+      margin: spacing(5, 0, 20);
+    }
+    h4 {
+      font-weight: $font-bold;
+      margin-bottom: $spacing4
+    }
+  }
+  .button {
+    margin-top: $spacing4
+  }
+  .flex {
+    display: flex;
+    justify-content: center
+  }
+
+  .deco {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    @include breakpoints-down(sm) {
+      margin: spacing(5, 0);
+    }
+    h3 {
+      font-size: 106px;
+      text-transform: capitalize;
+      font-weight: 700;
+      padding-top: 40px;
+      @include padding-left(20px);
+      color: $palette-common-white;
+      font-family: 'Times New Roman';
+      position: relative;
+      z-index: 1;
+    }
+    &:before {
+      content: "";
+      border-bottom: 290px solid $palette-primary-main;
+      border-left: 180px solid transparent;
+      border-right: 180px solid transparent;
+      position: absolute;
+      bottom: -20px;
+      @include left(-170px)
+    }
+    &:after {
+      content: "";
+      border-bottom: 240px solid $palette-secondary-main;
+      border-left: 130px solid transparent;
+      border-right: 130px solid transparent;
+      position: absolute;
+      bottom: -20px;
+      @include right(-130px)
+    }
+  }
+
+  .text {
+    @include breakpoints-up(md) {
+      @include padding-left($spacing5);
+      @include border-left(1px solid);
+      @include use-theme(border-left-color, $light-divider, $dark-divider)
+    }
+    @include breakpoints-down(xs) {
+      text-align: center;
+      margin: spacing(5, 0, 20);
+    }
+    h4 {
+      font-weight: $font-bold;
+      margin-bottom: $spacing4
+    }
+  }
+  .button {
+    margin-top: $spacing4
+  }
+}
+

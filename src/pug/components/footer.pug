@@ -1,0 +1,50 @@
+.root
+  footer.container.px-0.max-lg
+    .row
+      .col-md-7.order-md-last
+        .wow.fadeInRightShort(data-wow-offset='100' data-wow-delay='0.2s' data-wow-duration='0.3s')
+          #contact
+            include contact.pug
+      .col-md-5.order-md-first
+        .wow.fadeInLeftShort(data-wow-offset='100' data-wow-delay='0.2s' data-wow-duration='0.3s')
+          div
+            .logo
+              |
+              |
+              img(src=assets+brand.maskulino.img alt='logo')/
+              |
+              |
+              h3.use-text-title #{brand.maskulino.name}
+              h4.use-text-subtitle #{brand.maskulino.title}
+              |
+              |
+              a.btn-outlined.primary.waves-effect.download(href="#") Download CV
+              |
+              |
+            .socmed
+              |
+              |
+              a.btn-icon.margin.waves-effect(href="#")
+                i.ion-logo-facebook.fb
+              |
+              |
+              a.btn-icon.margin.waves-effect(href="#")
+                i.ion-logo-linkedin.id
+              |
+              |
+              a.btn-icon.margin.waves-effect(href="#")
+                i.ion-logo-twitter.tw
+              |
+              |
+              a.btn-icon.margin.waves-effect(href="#")
+                i.ion-logo-instagram.ig
+              |
+              |
+            .contact
+              p.use-text-paragraph #{$t.maskulino_landing.footer_contact}
+                br/
+                | +12 345 678 90
+              .divider
+              p.use-text-paragraph #{$t.maskulino_landing.footer_hello}
+                br/
+                | jenadoe.skype

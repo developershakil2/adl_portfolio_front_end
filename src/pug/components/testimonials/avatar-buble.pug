@@ -1,0 +1,15 @@
+mixin avatar-buble(avatar, name)
+  .person
+    if avatar
+      .avatar.avatar-img
+        |
+        |
+        img(src=avatar alt='name')/
+        |
+        |
+    else
+      |
+      |
+      span.dot
+      |
+      |

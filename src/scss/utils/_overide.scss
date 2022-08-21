@@ -1,0 +1,318 @@
+/*
+** theme color var
+*/
+@import './color-var';
+
+* {
+    background-repeat: no-repeat;
+    padding: 0;
+    margin: 0;
+}
+
+*, ::before, ::after {
+    box-sizing: inherit;
+}
+
+html {
+  @media only screen and (min-width: 992px) {
+    font-size: 16px
+  }
+  @media only screen and (min-width: 0) {
+    font-size: 16px
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  line-height: 1.5
+}
+
+strong {
+  font-weight: $font-bold
+}
+
+button {
+  text-align: center;
+}
+
+.m-application {
+  overflow: hidden;
+  line-height: 1.5;
+  .form-control {
+    background: none
+  }
+  .input-field {
+    .help-block {
+      position: absolute;
+      font-size: 13px;
+      &.form-error {
+        color: #dd493c
+      }
+    }
+  }
+  input:not([type]):focus.valid ~ label, input[type=text]:not(.browser-default):focus.valid ~ label, input[type=password]:not(.browser-default):focus.valid ~ label, input[type=email]:not(.browser-default):focus.valid ~ label, input[type=url]:not(.browser-default):focus.valid ~ label, input[type=time]:not(.browser-default):focus.valid ~ label, input[type=date]:not(.browser-default):focus.valid ~ label, input[type=datetime]:not(.browser-default):focus.valid ~ label, input[type=datetime-local]:not(.browser-default):focus.valid ~ label, input[type=tel]:not(.browser-default):focus.valid ~ label, input[type=number]:not(.browser-default):focus.valid ~ label, input[type=search]:not(.browser-default):focus.valid ~ label, textarea.materialize-textarea:focus.valid ~ label {
+    color: inherit
+  }
+  [type=checkbox] + span:not(.lever) {
+    padding-left: 30px;
+  }
+  .carousel-item {
+    transition: auto
+  }
+  .modal-content {
+    h4 {
+      font-size: 1.25rem;
+      font-weight: $font-bold;
+      margin-bottom: $spacing2;
+    }
+    .modal-close {
+      position: absolute;
+      top: $spacing1;
+      right: $spacing1;
+    }
+  }
+  .carousel {
+    height: auto;
+  }
+  a {
+    color: $palette-secondary-main;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  figure {
+    margin: 0;
+  }
+  .btn{
+    &:not(.btn-flat):not(.btn-icon) {
+      &:hover {
+        color: #FFF;
+      }
+      &:focus {
+        box-shadow: none
+      }
+    }
+  }
+  .btn-floating {
+    @include shadow5;
+  }
+  textarea.materialize-textarea {
+    height: auto;
+  }
+  nav {
+    box-shadow: none;
+    background: none;
+    width: auto;
+    color: inherit;
+    i {
+      height: auto;
+      line-height: normal;
+    }
+    ul a:hover {
+      background: none
+    }
+  }
+  &--is-rtl {
+    text-align: right
+  }
+  .m-content {
+    font-family: "Lato", sans-serif;
+    padding: 0 !important;
+  }
+  .overlay {
+    z-index: 90 !important
+  }
+  .m-application--wrap a {
+    color: $palette-primary-main
+  }
+  .btn.btn-large {
+    font-size: 0.9375rem;
+  }
+  .btn {
+    font-weight: $font-bold;
+  }
+  .slick-slide {
+    &:focus {
+      outline: none;
+    }
+  }
+  label {
+    font-size: 1rem;
+    color: var(--con-2);
+  }
+  .row {
+    flex-direction: row;
+    margin-bottom: 0;
+    &:after {
+      display: none
+    }
+    &.spacing2 {
+      margin-left: -8px;
+      margin-right: -8px;
+    }
+    &.spacing4 {
+      margin-left: -16px;
+      margin-right: -16px;
+    }
+    &.spacing6 {
+      margin-left: -24px;
+      margin-right: -24px;
+    }
+    &.spacing8 {
+      margin-left: -32px;
+      margin-right: -32px;
+    }
+    &.row-reverse {
+      flex-direction: row-reverse
+    }
+    &.column {
+      flex-direction: column
+    }
+    &.column-reverse {
+      flex-direction: column-reverse
+    }
+  }
+  :focus {
+    outline: none;
+  }
+  .card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    &-content {
+      font-size: 0.875rem;
+    }
+  }
+  .accordion-content.active {
+    .collapsible-header {
+      > .arrow {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .collapsible-header {
+    > p {
+      flex: 1
+    }
+    > i {
+      transition: all 0.3s ease;
+      transform-origin: center;
+      height: 28px;
+      width: 28px;
+    }
+    h6 {
+      margin: 0;
+      flex: 1;
+    }
+  }
+  .collapsible-body {
+    padding: 0 1rem;
+  }
+}
+
+.m-application.theme--dark {
+  .card {
+    box-shadow: 0px 1px 3px 0px rgba(64, 64, 64, 1), 0px 1px 1px 0px rgba(42, 42, 42, 1), 0px 2px 1px -1px rgba(20, 20, 20, 1)
+  }
+}
+
+.m-application.theme--light {
+  .card {
+    box-shadow: 0 1.5px 12px 2px rgba(0, 0, 0, 0.06);
+  }
+}
+
+.m-content {
+  -webkit-box-flex: 1;
+  flex: 1 1 auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 100%;
+  position: relative;
+}
+
+/* Content Overider */
+#main-wrap .container {
+  padding: 0 16px;
+  max-width: 1280px;
+  width: 100%;
+  @media (min-width: 600px) {
+    padding: 0 24px
+  }
+  @media (min-width: 960px) {
+    padding: 0 32px
+  }
+  &.fixed-width {
+    @media (min-width: 600px) {
+      max-width: 600px;
+    }
+    @media (min-width: 960px) {
+      max-width: 960px;
+    }
+    @media (min-width: 1280px) {
+      max-width: 1280px;
+    }
+  }
+  &.fixed-width-md-up {
+    @media (min-width: 960px) {
+      max-width: 960px;
+    }
+    @media (min-width: 1280px) {
+      max-width: 1280px;
+    }
+  }
+  &.fixed-width-lg-up {
+    @media (min-width: 1280px) {
+      max-width: 1280px;
+    }
+  }
+  &.max-lg {
+    max-width: 1280px
+  }
+  &.max-md {
+    max-width: 960px
+  }
+  &.max-sm {
+    max-width: 600px
+  }
+  &.max-xs {
+    max-width: 444px
+  }
+}
+
+.card .card-action a:not(.btn):not(.btn-small):not(.btn-large):not(.btn-large):not(.btn-floating) {
+  color: $palette-primary-main !important;
+  padding: 0;
+}
+
+select.select {
+  display: none;
+}
+
+.dropdown-content li > a, .dropdown-content li > span {
+  @include palette-text-primary
+}
+
+/* Theme overider */
+.maskulino {
+  --font-regular: 400;
+  --font-medium: 700;
+  --font-bold: 900;
+  .btn {
+    box-shadow: none;
+    color: $palette-common-white;
+  }
+  .btn,
+  .card{
+    border-radius: 0
+  }
+  .card {
+    @include palette-background-paper;
+  }
+}

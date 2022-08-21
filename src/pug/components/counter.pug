@@ -1,0 +1,51 @@
+.counter-wrap
+  .container.max-md
+    .row.counter-inner.spacing6.justify-content-center.align-items-center
+      .col.px-6
+        .counter-item
+          .text
+            i.ion-ios-briefcase-outline
+            h4.use-text-title
+              |
+              |
+              span.numscroller(
+                data-min="0"
+                data-max="123"
+                data-delay="5"
+                data-increment="10"
+              ) &nbsp;
+              |
+              |
+          h6.use-text-subtitle #{$t.maskulino_landing.counter_completed}
+      .col.pa-6.py-sm-0
+        .counter-item
+          .text
+            i.ion-ios-time-outline
+            h4.use-text-title
+              |
+              |
+              span.numscroller(
+                data-min="0"
+                data-max="4567"
+                data-delay="10"
+                data-increment="100"
+              ) &nbsp;
+              |
+              |
+          h6.use-text-subtitle #{$t.maskulino_landing.counter_hour}
+      .col.px-6.py-sm-0
+        .counter-item
+          .text
+            i.ion-ios-heart-outline
+            h4.use-text-title
+              |
+              |
+              span.numscroller(
+                data-min="0"
+                data-max="89"
+                data-delay="1"
+                data-increment="10"
+              ) &nbsp;
+              |
+              |
+          h6.use-text-subtitle #{$t.maskulino_landing.counter_happy}

@@ -1,0 +1,148 @@
+#about {
+  #timeline.root {
+    @include breakpoints-up(sm) {
+      background-repeat: no-repeat;
+      background-position: bottom right;
+    }
+    position: relative;
+    @include breakpoints-down(md) {
+      padding-top: $spacing5
+    }
+  }
+
+  .name-deco {
+    margin: 0px;
+    padding: 0px;
+    white-space: nowrap;
+    transform: rotate(-90deg);
+    transform-origin: top center;
+    letter-spacing: -10px;
+    position: absolute;
+    font-weight: $font-regular;
+    text-transform: uppercase;
+    color: $palette-common-black;
+    top: $spacing3 * 10;
+    @include left($spacing5 * -1);
+    font-size: 72px;
+    opacity: 0.1;
+    z-index: 2
+  }
+
+  .title-timeline {
+    text-transform: uppercase;
+    margin-bottom: $spacing3;
+    color: $palette-secondary-main;
+  }
+
+  .history {
+    @include border-left(2px solid);
+    position: relative;
+    padding: spacing(5, 4, 10);
+    border-image-source: linear-gradient(190deg, $palette-primary-main, $palette-secondary-main);
+    border-image-slice: 1;
+    border-top: 0;
+    border-bottom: 0;
+    @include border-right(0);
+    @include breakpoints-down(md) {
+      border: none !important
+    }
+    @include breakpoints-down(xs) {
+      padding: spacing(0, 0, 5)
+    }
+    h3 {
+      font-weight: $font-bold;
+      @include breakpoints-down(xs) {
+        width: 100%
+      }
+    }
+    p {
+      @include breakpoints-down(xs) {
+        display: inline-block;
+        @include margin-right($spacing2)
+      }
+    }
+    ul {
+      margin: 0px;
+      padding: 0px;
+      li {
+        list-style: none;
+        margin-bottom: $spacing5;
+        position: relative;
+        @include breakpoints-down(sm) {
+          @include padding-left(45px)
+        }
+        &:last-child {
+          margin-bottom: 0
+        }
+        &:before {
+          content: "";
+          border-radius: 50%;
+          width: 24px;
+          height: 24px;
+          border: 4px solid;
+          @include use-theme(background, $palette-primary-dark, $palette-primary-light);
+          @include use-theme(border-color, $light-background-paper, $dark-background-default);
+          position: absolute;
+          @include left(-45px);
+          top: 4px;
+          @include breakpoints-down(sm) {
+            @include left(0)
+          }
+        }
+        .time {
+          @include palette-text-secondary
+        }
+      }
+    }
+  }
+
+  .progress-wrap {
+    padding-bottom: $spacing8;
+    @include breakpoints-up(sm) {
+      padding: spacing(5, 0, 10)
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        list-style: none;
+        margin-bottom: $spacing5;
+        &:last-child {
+          margin-bottom: 0
+        }
+        h5 {
+          font-weight: $font-bold
+        }
+      }
+    }
+  }
+
+  .text-icon {
+    margin-bottom: $spacing1;
+    display: flex;
+    align-items: center;
+    i {
+      @include palette-text-secondary;
+      font-size: 28px;
+    }
+    h5 {
+      @include margin-left($spacing1)
+    }
+  }
+  .zero {
+    .progress {
+      .progress-linear {
+        width: 0 !important;
+      }
+    }
+  }
+  .progress {
+    border-radius: 10px;
+    height: 10px;
+    @include use-theme(background, $light-divider, $dark-divider);
+    .progress-linear {
+      border-radius: 10px;
+      @include use-theme(background, $palette-primary-main, $light-background-default);
+    }
+  }
+}

@@ -1,0 +1,109 @@
+-
+  var portfolio = [
+    {
+      img: imgAPI.maskulino[6],
+      title: 'Aenean facilisis vitae purus',
+      link: 'linkofthisitem.com',
+      size: 'short',
+      category: 'cat1'
+    },
+    {
+      img: imgAPI.maskulino[7],
+      title: 'Aenean facilisis vitae purus',
+      link: 'linkofthisitem.com',
+      size: 'long',
+      category: 'cat2'
+    },
+    {
+      img: imgAPI.maskulino[8],
+      title: 'Aenean facilisis vitae purus',
+      link: 'linkofthisitem.com',
+      size: 'short',
+      category: 'cat3'
+    },
+    {
+      img: imgAPI.maskulino[9],
+      title: 'Aenean facilisis vitae purus',
+      link: 'linkofthisitem.com',
+      size: 'long',
+      category: 'cat1'
+    },
+    {
+      img: imgAPI.maskulino[10],
+      title: 'Aenean facilisis vitae purus',
+      link: 'linkofthisitem.com',
+      size: 'short',
+      category: 'cat2'
+    },
+    {
+      img: imgAPI.maskulino[11],
+      title: 'Aenean facilisis vitae purus',
+      link: 'linkofthisitem.com',
+      size: 'short',
+      category: 'cat3'
+    },
+    {
+      img: imgAPI.maskulino[12],
+      title: 'Aenean facilisis vitae purus',
+      link: 'linkofthisitem.com',
+      size: 'short',
+      category: 'cat1'
+    },
+    {
+      img: imgAPI.maskulino[14],
+      title: 'Aenean facilisis vitae purus',
+      link: 'linkofthisitem.com',
+      size: 'short',
+      category: 'cat2'
+    },
+    {
+      img: imgAPI.maskulino[13],
+      title: 'Aenean facilisis vitae purus',
+      link: 'linkofthisitem.com',
+      size: 'long',
+      category: 'cat2'
+    }
+  ]
+
+include cards/image-thumb.pug
+include title
+
+.root
+  .container
+    +title-main
+      | #{$t.maskulino_landing.gallery_title} 
+      strong #{$t.maskulino_landing.gallery_titleBold}
+    .hidden-xs-down
+      .filter
+        |
+        |
+        button.btn.waves-effect.selected(data-filter="all") All
+        |
+        |
+        button.btn.waves-effect(data-filter="cat1") Category 1
+        |
+        |
+        button.btn.waves-effect(data-filter="cat2") Category 2
+        |
+        |
+        button.btn.waves-effect(data-filter="cat3") Category 3
+        |
+        |
+        button.btn.waves-effect(data-filter="cat4") Category 4
+        |
+        |
+        button.btn.waves-effect(data-filter="cat5") Category 5
+        |
+        |
+    .hidden-xs-down
+      .massonry#image_gallery
+        each item, index in portfolio
+          .item.loaded(data-category=item.category style="transition-duration:" + index / 8 + "s")
+            .wow.fadeInUpShort(data-wow-offset='100' data-wow-delay='0.2s' data-wow-duration='0.3s')
+              +image-thumb(item.img, item.title, item.link, item.size)
+      p#no_data.overline.text-center.hide #{$t.maskulino_landing.gallery_nodata}
+    .hidden-sm-up
+      .slick-carousel#gallery_carousel
+        each item in portfolio
+          .item-carousel(data-category=item.category)
+            +image-thumb(item.img, item.title, item.link, item.size)

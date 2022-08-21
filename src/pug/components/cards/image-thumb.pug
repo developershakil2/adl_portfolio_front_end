@@ -1,0 +1,15 @@
+mixin image-thumb(img, title, link, size)
+  .card.img-thumb(class=size)
+    a(href=img).waves-effect
+      span.figure
+        .img(style="background-image: url(" + img + ")")
+        |
+        |
+        img(
+          src=img
+          alt='gallery'
+        )/
+        |
+        |
+      span.detail
+        h6.use-text-subtitle #{title}

@@ -1,0 +1,152 @@
+#testimonials {
+  .root {
+    @include use-theme(background, $palette-primary-light, $palette-primary-dark);
+    padding: spacing(10, 0);
+    position: relative;
+    z-index: 8;
+    .container {
+      @include breakpoints-down('xs') {
+        padding: 0
+      }
+    }
+  }
+  .avatar-wrap {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+    .avatar-item {
+      position: absolute;
+    }
+  }
+  .text {
+    padding-top: $spacing5;
+    h3 {
+      margin-bottom: $spacing3
+    }
+    p {
+      margin-bottom: $spacing3;
+      font-size: 18px;
+      line-height: 32px
+    }
+    .button {
+      min-width: 160px;
+    }
+    @include breakpoints-down(sm) {
+      text-align: center;
+      padding: spacing(0, 2)
+    }
+  }
+  .world-map {
+    background: url(../images/maskulino/worldMap.png) no-repeat center center;
+    background-size: 100%;
+    position: relative;
+    margin: 0 auto;
+    @include breakpoints-up(sm) {
+      height: 360px;
+      width: 580px
+    }
+  }
+  .person {
+    position: absolute
+  }
+  .avatar {
+    transition: all 0.3s ease-out;
+    transform-origin: center center;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  .dot {
+    border-radius: 50%;
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: $palette-secondary-main;
+    border: 2px solid #FFF;
+    box-shadow: 0 1.5px 24.5px 4.5px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease-out;
+    &:hover {
+      transform: scale(1.2)
+    }
+  }
+  .title-main {
+    @include palette-text-secondary;
+  }
+  .popover {
+    pointer-events: none
+  }
+  .paper {
+    width: 300px;
+    border-radius: 0 !important;
+    background: none;
+    box-shadow: none;
+    &:before {
+      content: "";
+      border-top: 15px solid;
+      border-top-color: $palette-secondary-main;
+      border-left: 25px solid transparent;
+      border-right: 25px solid transparent;
+      position: absolute;
+      @include left(calc(50% - 25px));
+      bottom: 15px
+    }
+  }
+  .item-carousel {
+    padding: $spacing2
+  }
+  .card {
+    padding: $spacing3;
+    border-radius: 4px !important;
+    @include palette-text-primary;
+    .avatar {
+      width: 30px;
+      height: 30px
+    }
+  }
+  .name {
+    display: flex;
+    margin-top: $spacing1;
+    align-items: center;
+    span {
+      display: inline-block;
+      @include margin-left($spacing1);
+    }
+  }
+}
+
+.popover {
+  border: none;
+  border-radius: 0;
+  background: $palette-common-black;
+  [dir="rtl"] & {
+    right: auto
+  }
+}
+
+.bs-popover-top > .arrow::after {
+  border-top-color: $palette-common-black;
+}
+
+.bs-popover-bottom > .arrow::after {
+  border-bottom-color: $palette-common-black;
+}
+
+.paper-block {
+  color: $palette-common-white;
+  padding: 0 $spacing1;
+  margin-bottom: 30px;
+  border-radius: 0 !important;
+  position: relative;
+  box-shadow: none !important;
+  h6 {
+    margin-top: $spacing2;
+    font-size: 14px;
+    font-weight: bold
+  }
+  .title {
+    color: $palette-common-white;
+    font-style: italic;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,12 @@
+-
+  var images = [imgAPI.photo[1], imgAPI.photo[2], imgAPI.photo[3], imgAPI.photo[4], imgAPI.photo[5]]
+
+#hero-banner
+  .animation-slider
+    .slideshow
+      .carousel
+        .slick-carousel#hero_carousel
+          each item in images
+            .slide-item
+              .img(style="background-image: url("+item+")")
+    #particles_background.particle-background

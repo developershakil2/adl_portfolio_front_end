@@ -1,0 +1,126 @@
+#services {
+  .root {
+    position: relative;
+    z-index: 10;
+    > div {
+      @include breakpoints-down(md) {
+        padding: 0
+      }
+    }
+  }
+
+  .props {
+    width: 240px;
+    height: 240px;
+    &:focus {
+      outline: none
+    }
+  }
+
+  .floating-title {
+    text-align: center;
+    padding: spacing(0, 2);
+    & > div {
+      margin-bottom: $spacing4;
+    }
+    @include breakpoints-up(md) {
+      position: absolute;
+      @include left($spacing8);
+      top: $spacing2;
+      width: 240px;
+    }
+  }
+
+  .carousel {
+    position: relative;
+    @include breakpoints-down(sm) {
+      margin-top: $spacing3
+    }
+  }
+
+  .item {
+    padding: spacing(0, 1);
+    margin-bottom: $spacing1;
+    &:focus {
+      outline: none
+    }
+  }
+
+  .nav {
+    position: absolute;
+    top: 45%;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    min-width: 0;
+    @include palette-background-default;
+    border: none;
+    box-shadow: none;
+    z-index: 3;
+    [dir="rtl"] & {
+      transform: scale(2.5) rotate(180deg)
+    }
+    [dir="ltr"] & {
+      transform: scale(2.5) rotate(0deg)
+    }
+    @include breakpoints-down(sm) {
+      display: none
+    }
+    i {
+      transform: scale(1.6);
+      @include palette-text-primary;
+    }
+  }
+
+  .prev {
+    @include left(6px)
+  }
+
+  .next {
+    @include right(6px)
+  }
+
+  .item-props-first {
+    div {
+      [dir="rtl"] & {
+        width: 400px 
+      }
+      [dir="ltr"] & {
+        width: 350px 
+      }
+      @media (max-width: 1500px) {
+        [dir="rtl"] & {
+          width: 500px 
+        }
+        [dir="ltr"] & {
+          width: 350px 
+        }
+      }
+    }
+    @include breakpoints-down(sm) {
+      display: none
+    }
+  }
+
+  .item-props-last {
+    [dir="rtl"] & {
+      width: 350px 
+    }
+    [dir="ltr"] & {
+      width: 400px 
+    }
+    div {
+      @media (max-width: 1500px) {
+        [dir="rtl"] & {
+          width: 300px 
+        }
+        [dir="ltr"] & {
+          width: 500px 
+        }
+      }
+    }
+    @include breakpoints-down(md) {
+      display: none
+    }
+  }
+}

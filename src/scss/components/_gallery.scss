@@ -1,0 +1,71 @@
+#my-work {
+  .root {
+    z-index: 10;
+    position: relative;
+    @include breakpoints-down(xs) {
+      .container {
+        padding: 0 !important
+      }
+    }
+  }
+
+  .filter {
+    position: relative;
+    z-index: 20;
+    overflow: auto;
+    width: 100%;
+    padding: spacing(3, 0);
+    display: flex;
+    @include breakpoints-down(sm) {
+      padding: spacing(0, 1, 3)
+    }
+    > .btn {
+      background: transparent;
+      border-radius: 40px;
+      font-weight: $font-medium;
+      @include margin-right($spacing1);
+      border: 1px solid rgba(0, 0, 0, 0.87);
+      @include palette-text-primary;
+      white-space: nowrap;
+      min-width: 100px;
+      display: inline-flex;
+      -webkit-box-flex: 0;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
+      @include breakpoints-up(sm) {
+        padding: spacing(0, 4);
+        box-shadow: none;
+        @include margin-right($spacing3)
+      }
+      &.selected {
+        background: $palette-secondary-dark;
+        color: $palette-common-white
+      }
+    }
+  }
+
+  .massonry {
+    columns: 3 300px;
+    column-gap: $spacing4
+  }
+
+  .item {
+    break-inside: avoid;
+    position: relative;
+    transform: translateY(20px);
+    opacity: 0;
+    &.loaded {
+      opacity: 1;
+      transition: all 0.3s ease-out;
+      transform: translateY(0px);
+    }
+  }
+
+  .item-carousel {
+    position: relative;
+    @include breakpoints-down(xs) {
+      padding: spacing(0, 1)
+    }
+  }
+}

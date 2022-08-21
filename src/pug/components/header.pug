@@ -1,0 +1,88 @@
+include settings.pug
+
+mixin header(invert)
+  header.app-bar#header.header.mq-md-down(
+    class=invert && "fixed"
+    data-class="fixed"
+  )
+    .container.fixed-width-md-up
+      .header-content
+        nav.nav-logo.nav-menu(class=invert && 'invert')
+          |
+          |
+          button#mobile_menu.btn-icon.waves-effect.hamburger.hamburger--spin.mobile-menu
+            |
+            |
+            span.hamburger-box
+              |
+              |
+              span.bar.hamburger-inner
+              |
+              |
+            |
+            |
+          .logo(class= !invert && "scrollnav")
+            |
+            |
+            a(href=invert ? link.maskulino.home : "#home")
+              img(
+                src=assets + brand.maskulino.img
+                alt="logo"
+              )/
+            |
+            |
+          +setting-menu(true)
+  .paper-nav#main_menu
+    .mobile-nav
+      .container.max-md
+        .row
+          .col-sm-6
+            .root-menu
+              .hidden-md-down
+                h5.name-deco EXPLORE
+              .scrollactive-nav.scrollnav
+                ul.menu
+                  each item, index in menu.maskulino
+                    li(style="animation-duration: "+(Number(index + 1)) * 0.25 + 's')
+                      a.btn-flat.waves-effect(
+                        href=invert ? 'index.html#'+item.name : '#'+item.name
+                      ) #{$t.maskulino_landing['header_'+item.name]}
+          .col-sm-6
+            .detail
+              .hidden-md-down
+                h5.name-deco CONTACT
+              .logo-name
+                h3.use-text-title #{brand.maskulino.name}
+                h4.use-text-subtitle #{brand.maskulino.title}
+                |
+                |
+                a.btn-outlined.primary.waves-effect.download(href="#") Download CV
+                |
+                |
+              .socmed
+                |
+                |
+                a.btn-icon.margin.waves-effect(href="#")
+                  i.ion-logo-facebook.fb
+                |
+                |
+                a.btn-icon.margin.waves-effect(href="#")
+                  i.ion-logo-linkedin.in
+                |
+                |
+                a.btn-icon.margin.waves-effect(href="#")
+                  i.ion-logo-twitter.tw
+                |
+                |
+                a.btn-icon.margin.waves-effect(href="#")
+                  i.ion-logo-instagram.ig
+                |
+                |
+              .contact
+                p.use-text-paragraph #{$t.maskulino_landing.footer_contact}
+                  br/
+                  | +12 345 678 90
+                .divider
+                p.use-text-paragraph #{$t.maskulino_landing.footer_hello}
+                  br/
+                  | jenadoe.skype

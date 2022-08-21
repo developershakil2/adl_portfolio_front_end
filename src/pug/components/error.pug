@@ -1,0 +1,19 @@
+mixin error(errCode, text)
+  .error-wrap
+    section.container.max-lg
+      .row
+        .col-md-5
+          .flex
+            .deco
+              h3 #{errCode}
+        .col-md-7
+          .text
+            h4.display-1 #{text}
+            p #{$t.common["404_subtitle"]}
+            |
+            |
+            a.btn.primary.waves-effect.btn-large.button(
+              href=link.maskulino.home
+            ) #{$t.common.back}
+            |
+            |

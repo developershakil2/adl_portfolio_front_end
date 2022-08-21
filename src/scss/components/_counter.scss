@@ -1,0 +1,29 @@
+.counter-wrap {
+  @include use-theme(background, $palette-primary-light, $palette-primary-dark);
+  padding: spacing(5, 0);
+  .text {
+    display: flex;
+    align-items: center;
+    @include breakpoints-down(sm) {
+      justify-content: center
+    }
+  }
+
+  .counter-item {
+    h6 {
+      white-space: nowrap
+    }
+    @include breakpoints-up(sm) {
+      @include padding-left($spacing2)
+    }
+    @include breakpoints-down(sm) {
+      text-align: center
+    }
+    i {
+      @include margin-right($spacing2);
+      font-size: 64px;
+      line-height: 40px
+    }
+  }
+}
+

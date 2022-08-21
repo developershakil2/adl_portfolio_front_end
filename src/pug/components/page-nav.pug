@@ -1,0 +1,30 @@
+.page-nav#page_nav
+  nav.section-nav
+    .scrollnav
+      ul
+        each item, index in menu.maskulino
+          li(style=`top: ${30 * (menu.maskulino.length - index)}px`)
+            |
+            |
+            a.tooltipped(
+              href='#'+item.name
+              data-position="left"
+              data-tooltip=$t.maskulino_landing['header_'+item.name]
+            )
+            |
+            |
+  .scrollnav
+    |
+    |
+    a.btn-floating.btn-large.secondary.tooltipped.waves-effect.waves-light(
+      href="#home"
+      data-position="left"
+      data-tooltip="To Top"
+    )
+      |
+      |
+      i.icon.material-icons arrow_upward
+      |
+      |
+    |
+    |

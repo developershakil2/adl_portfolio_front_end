@@ -1,0 +1,49 @@
+$title-deco-light: '../images/maskulino/titleDecoLight.png';
+$title-deco-dark: '../images/maskulino/titleDecoDark.png';
+
+.title-main {
+  display: block;
+  position: relative;
+  margin-bottom: $spacing3;
+  text-align: center;
+  height: $spacing8;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 72px;
+  padding: spacing(2, 0);
+  h4 {
+    @include palette-text-primary;
+    vertical-align: middle;
+    font-weight: $font-regular;
+    text-transform: capitalize;
+    font-size: 36px;
+    line-height: 56px;
+    @include breakpoints-down(md) {
+      font-size: 32px;
+      line-height: 48px;
+    }
+    @include breakpoints-down(xs) {
+      font-size: 24px;
+      line-height: 36px
+    }
+    strong {
+      font-weight: $font-bold;
+    }
+  }
+  &:after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    bottom: -16px;
+    border-radius: 12px;
+    @include use-theme(background, $palette-primary-main, $palette-primary-light);
+    position: absolute;
+    @include left(50%);
+    @include margin-left(-6px);
+  }
+  &.dark {
+    h4 {
+      color: $palette-common-white
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.card.form-box
+  .row
+    .col-lg-5
+      h3.title-form.use-text-title Contact
+        span Me.
+    .col-lg-7
+      .form
+        form#contact_form
+          .row.spacing6
+            .col-sm-12.px-6.py-0
+              .input-field.light.secondary.filled
+                  |
+                  |
+                  input.validate#name(type='text' required)
+                  |
+                  |
+                  label(for='name') #{$t.common.form_name}
+                  |
+                  |
+            .col-sm-12.px-6.py-0
+              .input-field.light.secondary.filled
+                  |
+                  |
+                  input.validate#email(type='email' required)
+                  |
+                  |
+                  label(for='email') #{$t.common.form_email}
+                  |
+                  |
+            .col-sm-12.px-6.py-0
+              .input-field.light.secondary.filled
+                  |
+                  |
+                  textarea#message.materialize-textarea(rows="6")
+                  |
+                  |
+                  label(for='message') #{$t.common.form_message}
+                  |
+                  |
+          .btn-area
+            button.btn.btn-large.primary.waves-effect(type="submit") #{$t.maskulino_landing.form_send}

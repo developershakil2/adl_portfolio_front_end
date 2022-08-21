@@ -1,0 +1,73 @@
+.root
+  .container.fixed-width-lg-up
+    .row
+      .pa-0(class=sidenav === 'icon' ? 'col-lg-1' : 'col-lg-2')
+        if sidenav === 'icon'
+          #side_nav_icon.hidden-md-down
+            include side-navigation-icon.pug
+        else
+          #side_nav.hidden-md-down
+            include side-navigation.pug
+      .pa-0(class=sidenav === 'icon' ? 'col-lg-11' : 'col-lg-10')
+        .banner
+          .cover
+            .figure
+              if hero_banner === 'animation'
+                include ./hero/animation
+              else if hero_banner === 'animation-slideshow'
+                include ./hero/animation-slideshow
+              else if hero_banner === 'slideshow'
+                include ./hero/slideshow
+              else if hero_banner === 'video'
+                include ./hero/video
+              else
+                .img(style="background-image: url("+brand.maskulino.cover+")")
+          .setting-icon
+            .menu-setting
+              .setting
+                |
+                |
+                button.btn-icon.waves-effect.dropdown-trigger(
+                  data-target="dropdown_config"
+                  type="button"
+                  data-align=doc_dir === "rtl" ? "right" : "left"
+                )
+                  |
+                  |
+                  i.icon.material-icons#setting_icon(
+                    class=invert && "invert"
+                  ) settings
+                  |
+                  |
+          .text
+            h4.use-text-title2
+             span #{$t.maskulino_landing.banner_greeting},
+            h2.use-text-title
+              span #{$t.maskulino_landing.banner_me} John, Node.js Developer
+            .hidden-sm-down
+              h5.use-text-subtitle2
+                span #{$t.maskulino_landing.banner_desc}
+              .socmed
+                |
+                |
+                a.btn.btn-outlined.download.waves-effect(href="#") Download CV
+                |
+                |
+                |
+                |
+                a.btn-icon.margin.waves-effect(href="#")
+                  i.ion-logo-facebook
+                |
+                |
+                a.btn-icon.margin.waves-effect(href="#")
+                  i.ion-logo-twitter
+                |
+                |
+                a.btn-icon.margin.waves-effect(href="#")
+                  i.ion-logo-instagram
+                |
+                |
+                a.btn-icon.margin.waves-effect(href="#")
+                  i.ion-logo-linkedin
+                |
+                |

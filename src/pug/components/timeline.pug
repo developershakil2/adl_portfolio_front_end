@@ -1,0 +1,72 @@
+#timeline.root
+  .container.fixed-width-md-up
+    .row
+      .col-lg-2.pa-0
+        .hidden-md-down
+          h2.name-deco #{brand.maskulino.name}
+      .col-lg-10.pa-0
+        .row.spacing3
+          .col-md-5.col-sm-6.pe-sm-3.ps-sm-0.pe-6.py-0
+            .history
+              h5.title-timeline.use-text-subtitle
+                | #{$t.maskulino_landing.timeline_experience}
+              ul
+                li
+                  .wow.fadeInLeftShort(data-wow-offset="100" data-wow-duration="0.3s")
+                    div
+                      h3.use-text-subtitle2.pb-2 Creative Director
+                      p.mb-2 at Fourth Company
+                      p.time 2015 - Present
+                li
+                  .wow.fadeInLeftShort(data-wow-offset="100" data-wow-duration="0.3s")
+                    div
+                      h3.use-text-subtitle2.pb-2 Senior UI/UX Designer
+                      p.mb-2 at Third Company
+                      p.time 2013 - 2015
+                li
+                  .wow.fadeInLeftShort(data-wow-offset="100" data-wow-duration="0.3s")
+                    div
+                      h3.use-text-subtitle2.pb-2 UI/UX Designer
+                      p.mb-2 at Second Company
+                      p.time 2012 - 2013
+                li
+                  .wow.fadeInLeftShort(data-wow-offset="100" data-wow-duration="0.3s")
+                    div
+                      h3.use-text-subtitle2.pb-2 UI/UX Designer
+                      p.mb-2 at First Company
+                      p.time 2009 - 2011
+          .col-sm-6.px-sm-3.px-6.py-0
+            .progress-wrap
+              h5.title-timeline.use-text-subtitle
+                | #{$t.maskulino_landing.timeline_skill}
+              ul#progress.zero
+                li
+                  .text-icon
+                    i.ion-wand
+                    h5.use-text-subtitle2 UI Interface Design
+                  .progress
+                    .determinate.progress-linear(style='width: 80%')
+                li
+                  .text-icon
+                    i.ion-social-dribbble-outline
+                    h5.use-text-subtitle2 Icon Design
+                  .progress
+                    .determinate.progress-linear(style='width: 70%')
+                li
+                  .text-icon
+                    i.ion-ios-world-outline
+                    h5.use-text-subtitle2 HTML Prototyping
+                  .progress
+                    .determinate.progress-linear(style='width: 60%')
+                li
+                  .text-icon
+                    i.ion-ios-camera-outline
+                    h5.use-text-subtitle2 Photo Editing
+                  .progress
+                    .determinate.progress-linear(style='width: 90%')
+                li
+                  .text-icon
+                    i.ion-ios-snowy
+                    h5.use-text-subtitle2 Graphic Illustrations
+                  .progress
+                    .determinate.progress-linear(style='width: 80%')

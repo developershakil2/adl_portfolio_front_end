@@ -1,0 +1,252 @@
+.card.icon-text {
+  position: relative;
+  text-align: center;
+  padding: $spacing2;
+  width: 240px;
+  height: 200px;
+  transition: all 0.3s ease-out;
+  overflow: hidden;
+  border-radius: 0;
+  @media (max-width: 1500px) {
+    width: 200px
+  }
+  &:hover {
+    background: $palette-secondary-main;
+    .more {
+      bottom: 0
+    }
+    .name {
+      color: $palette-common-white;
+      top: 0px;
+      &:after {
+        width: 30px
+      }
+    }
+    .desc {
+      top: 0;
+      opacity: 1
+    }
+    .icon {
+      transform: scale(0.5);
+      opacity: 0
+    }
+  }
+  .icon {
+    margin-bottom: $spacing2;
+    transition: all 0.3s ease-out;
+    span {
+      &:before {
+        font-size: 130px;
+      }
+    }
+  }
+
+  .more {
+    position: absolute;
+    bottom: -90px;
+    width: 100%;
+    padding: $spacing3;
+    @include left(0);
+    height: 200px;
+    transition: all 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .name {
+    font-weight: $font-bold;
+    transition: all 0.3s ease-out;
+    margin-bottom: $spacing4;
+    top: 30px;
+    position: relative;
+    &:after {
+      content: "";
+      width: 0px;
+      transition: all 0.5s ease-out;
+      display: block;
+      position: relative;
+      margin: 0 auto;
+      top: $spacing1;
+      border-top: 2px solid #FFF
+    }
+  }
+
+  .desc {
+    top: 60px;
+    position: relative;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    color: $palette-common-white;
+  }
+}
+
+
+.card.img-thumb {
+  border: 8px solid;
+  @include use-theme(border-color, $light-background-paper, $dark-background-paper);
+  position: relative;
+  border-radius: 0;
+  transition: none;
+  overflow: visible;
+  .figure {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+  }
+  & > a {
+    height: 100%
+  }
+  .img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    transform: scale(1.2);
+    transition: transform 0.7s ease-out
+  }
+  &:hover {
+    .img {
+      transform: scale(1.1) rotate(-5deg)
+    }
+    .detail {
+      opacity: 1;
+      background-position: 60% 0;
+      h6, a {
+        transform: 'translate(0, 0)',
+      }
+    }
+  }
+  .detail {
+    position: absolute;
+    transition: opacity 0.3s ease-out, background-position 3s ease-out;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    opacity: 0;
+    padding: $spacing3;
+    color: $palette-common-white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.8;
+      background: $palette-primary-main;
+      background-size: 300%;
+      background-position: 0% 0;
+    }
+    > * {
+      transition: all 0.4s ease-out
+    }
+    h6 {
+      position: relative;
+      transform: translate(0, 10px);
+      margin-bottom: $spacing3;
+      line-height: 36px
+    }
+    a {
+      font-size: 18px;
+      text-decoration: underline;
+      color: $palette-common-white;
+      position: relative;
+      transform: translate(0, 30px);
+    }
+  }
+  &.short {
+    height: 240px;
+    @include breakpoints-down(md) {
+      height: 210px
+    }
+    .img {
+      width: 100%
+    }
+    &:before {
+      width: 80px;
+      height: 80px
+    }
+  }
+  &.medium {
+    height: 320px;
+    @include breakpoints-down(xs) {
+      height: 210px
+    }
+    .img {
+      width: 100%
+    }
+  }
+  &.long {
+    height: 480px;
+    @include breakpoints-down(xs) {
+      height: 210px;
+    }
+    .img {
+      height: 100%
+    }
+    &:before {
+      width: 190px;
+      height: 260px;
+    }
+    .figure {
+      &:after {
+        width: 300px;
+        height: 300px;
+        @include left(-200px);
+        bottom: -120px;
+      }
+    }
+  }
+}
+
+.card.post {
+  height: 380px;
+  width: 256px;
+  display: block;
+  position: relative;
+  @include breakpoints-down(xs) {
+    margin-bottom: 12px;
+  }
+  figure {
+    margin: 0px;
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      min-height: 100%
+    }
+  }
+  .text {
+    height: 200px;
+    padding: $spacing3;
+    h5 {
+      font-weight: $font-bold;
+      margin-bottom: $spacing1
+    }
+    p {
+      @include palette-text-secondary;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical
+    }
+  }
+  .readmore {
+    margin: spacing(0, 3);
+    line-height: 16px !important;
+    height: auto;
+    padding: 0 $spacing1;
+    @include use-theme(color, $palette-primary-main, $palette-primary-light);
+    &.btn {
+      height: auto;
+      padding: 0px;
+      font-weight: $font-regular
+    }
+  }
+}

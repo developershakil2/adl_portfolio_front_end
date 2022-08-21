@@ -1,0 +1,157 @@
+$gold: #D6BD96;
+#about {
+  .root {
+    position: relative;
+    > div {
+      @include breakpoints-down(xs) {
+        padding: 0
+      }
+    }
+  }
+
+  .about {
+    display: flex;
+    flex-direction: column-reverse;
+    overflow: visible;
+    @include breakpoints-up(md) {
+      flex-direction: row;
+      justify-content: space-between
+    }
+    @include breakpoints-down(sm) {
+      text-align: center;
+      > div > h5 {
+        font-weight: $font-regular;
+        font-size: 18px;
+        line-height: 28px;
+        margin-top: $spacing7;
+        padding: spacing(0, 2)
+      }
+    }
+  }
+
+  .line {
+    border: 2px solid;
+    border-top: 0;
+    @include border-left(0);
+    height: 40px;
+    width: calc(100% - 130px);
+    border-image-source: linear-gradient(120deg, $palette-primary-main, $palette-secondary-main);
+    border-image-slice: 1;
+    position: relative;
+    margin-top: $spacing2;
+    @include breakpoints-down(md) {
+      display: none
+    }
+  }
+
+  .reward {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    @include breakpoints-up(md) {
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      padding-top: 4px;
+      @include padding-right($spacing7)
+    }
+    @include breakpoints-down(xs) {
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      overflow: auto
+    }
+  }
+
+  .item {
+    text-align: center;
+    color: $gold;
+    margin: $spacing2;
+    @include breakpoints-up(md) {
+      margin: $spacing4
+    }
+    @include breakpoints-down(xs) {
+      padding-left: $spacing3;
+      padding-right: $spacing3
+    }
+    figure {
+      height: 70px;
+      margin: spacing(0, 0, 2);
+      @include breakpoints-down(sm) {
+        height: 50px;
+      }
+      img {
+        height: 100%
+      }
+    }
+    p {
+      font-family: Times New Roman;
+      margin-bottom: 0;
+      @include breakpoints-down(sm) {
+        font-size: 16px;
+      }
+    }
+    h5 {
+      font-weight: $font-medium;
+      text-transform: uppercase;
+      @include breakpoints-down(sm) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .photo {
+    position: relative;
+    margin-top: -140px;
+    background: $palette-common-white;
+    width: 270px;
+    height: 345px;
+    overflow: visible;
+    @include breakpoints-down(sm) {
+      width: 200px;
+      min-height: 200px;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    figure {
+      margin: 0;
+      img {
+        width: 100%;
+        min-height: 100%;
+      }
+    }
+  }
+
+  .frame {
+    position: absolute;
+    width: 90%;
+    @include left(5%);
+    top: $spacing2;
+    height: 105%;
+    border: 2px solid;
+    border-image-source: linear-gradient(120deg, $palette-primary-main, $palette-secondary-main);
+    border-image-slice: 1;
+    z-index: 5
+  }
+
+  .socmed {
+    margin: $spacing4 auto;
+    max-width: 600px;
+    @include breakpoints-up(md) {
+      display: flex;
+      justify-content: space-evenly;
+    }
+    a.btn-icon {
+      margin: spacing(1, 2);
+      width: 36px;
+      height: 36px;
+      i {
+        @include use-theme(color, $palette-primary-dark, $palette-primary-light)
+      }
+    }
+    i {
+      font-size: 22px;
+    }
+  }
+}
